@@ -6,6 +6,7 @@ type Query {
     nestedInputs(input: [[OuterInput]] = [[{inner: {id: 1}}]]): Boolean
     nestedOutputs: [[OuterObject]]
     keywords(input: Keywords): Boolean!
+    emptyInput(input: EmptyInput): Boolean!
     shapes: [Shape]
     errorBubble: Error
     valid: String!
@@ -61,6 +62,9 @@ type OuterObject {
 
 type InnerObject {
     id: Int!
+}
+
+input EmptyInput {
 }
 
 input Keywords {
